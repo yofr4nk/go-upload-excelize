@@ -35,7 +35,7 @@ func ProcessPeople(file multipart.File) ([]models.Person, error) {
 			Role:     row[2],
 		}
 
-		database.DBConnect.Create(&p)
+		database.DBConnection.Create(&p)
 
 		people = append(people, p)
 	}

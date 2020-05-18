@@ -10,7 +10,7 @@ import (
 	"os"
 )
 
-var DBConnect = initDB()
+var DBConnection = initDB()
 
 func initDB() *gorm.DB {
 	// Loading Env
@@ -33,7 +33,6 @@ func initDB() *gorm.DB {
 		panic("failed to connect database")
 	}
 
-	// Migration to create tables for Order and Item schema
 	db.AutoMigrate(&models.Person{})
 
 	fmt.Println("Connection successful")
@@ -43,7 +42,7 @@ func initDB() *gorm.DB {
 
 // CheckingConnection check if the database connection is available
 func CheckingConnection() bool {
-	checkError := DBConnect.DB().Ping()
+	checkError := DBConnection.DB().Ping()
 
 	if checkError != nil {
 		return false
