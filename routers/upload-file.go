@@ -9,7 +9,6 @@ import (
 // UploadFile route to process file before save it
 func UploadFile(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-type", "application/json")
-
 	file, _, err := r.FormFile("people_file")
 
 	if err != nil {

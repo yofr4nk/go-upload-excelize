@@ -3,6 +3,7 @@ package files
 import (
 	"errors"
 	"github.com/360EntSecGroup-Skylar/excelize/v2"
+	"github.com/yofr4nk/file-upload/database"
 	"github.com/yofr4nk/file-upload/models"
 	"mime/multipart"
 )
@@ -33,6 +34,8 @@ func ProcessPeople(file multipart.File) ([]models.Person, error) {
 			LastName: row[0],
 			Role:     row[2],
 		}
+
+		database.DBConnect.Create(&p)
 
 		people = append(people, p)
 	}
