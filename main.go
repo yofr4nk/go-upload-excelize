@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/yofr4nk/file-upload/database"
-	"github.com/yofr4nk/file-upload/handlers"
+	"go-upload-excelize/database"
+	"go-upload-excelize/handlers"
 	"log"
 )
 

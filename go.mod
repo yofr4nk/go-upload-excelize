@@ -1,4 +1,4 @@
-module github.com/yofr4nk/file-upload
+module go-upload-excelize
 
 go 1.14
 

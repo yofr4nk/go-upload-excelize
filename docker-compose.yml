@@ -6,7 +6,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ./:/go/src/github.com/yofr4nk/go-upload-excelize
+      - ./:/go-upload-excelize
     depends_on:
       - mysql
 

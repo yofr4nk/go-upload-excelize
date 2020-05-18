@@ -5,7 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/joho/godotenv"
-	"github.com/yofr4nk/file-upload/models"
+	"go-upload-excelize/models"
 	"log"
 	"os"
 )

@@ -3,8 +3,8 @@ package files
 import (
 	"errors"
 	"github.com/360EntSecGroup-Skylar/excelize/v2"
-	"github.com/yofr4nk/file-upload/database"
-	"github.com/yofr4nk/file-upload/models"
+	"go-upload-excelize/database"
+	"go-upload-excelize/models"
 	"mime/multipart"
 )
 

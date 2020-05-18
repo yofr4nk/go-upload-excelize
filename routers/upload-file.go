@@ -2,7 +2,7 @@ package routers
 
 import (
 	"encoding/json"
-	"github.com/yofr4nk/file-upload/files"
+	"go-upload-excelize/files"
 	"net/http"
 )
 

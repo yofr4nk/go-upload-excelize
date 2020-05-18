@@ -1,8 +1,8 @@
 FROM golang:latest
 
-WORKDIR /go/src/github.com/yofr4nk/go-upload-excelize
+WORKDIR /go-upload-excelize
 
-COPY ./ /go/src/github.com/yofr4nk/go-upload-excelize
+COPY ./ /go-upload-excelize
 
 RUN go get github.com/githubnemo/CompileDaemon
 
