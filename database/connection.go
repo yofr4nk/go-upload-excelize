@@ -2,10 +2,11 @@ package database
 
 import (
 	"fmt"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/joho/godotenv"
 	"go-upload-excelize/models"
+	"gorm.io/driver/mysql"
+	_ "gorm.io/driver/mysql"
+	"gorm.io/gorm"
 	"log"
 	"os"
 )
@@ -26,7 +27,7 @@ func initDB() *gorm.DB {
 	dbHost := os.Getenv("DB_HOST")
 
 	dataSourceName := dbUser + ":" + dbPassword + "@tcp(" + dbHost + ":3306)/" + dbName + "?parseTime=True"
-	db, dbErr := gorm.Open("mysql", dataSourceName)
+	db, dbErr := gorm.Open(mysql.Open(dataSourceName), &gorm.Config{})
 
 	if dbErr != nil {
 		fmt.Println(dbErr)
@@ -42,9 +43,9 @@ func initDB() *gorm.DB {
 
 // CheckingConnection check if the database connection is available
 func CheckingConnection() bool {
-	checkError := DBConnection.DB().Ping()
+	_, err := DBConnection.DB()
 
-	if checkError != nil {
+	if err != nil {
 		return false
 	}
 

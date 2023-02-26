@@ -2,7 +2,7 @@ package files
 
 import (
 	"errors"
-	"github.com/360EntSecGroup-Skylar/excelize/v2"
+	"github.com/xuri/excelize/v2"
 	"go-upload-excelize/database"
 	"go-upload-excelize/models"
 	"mime/multipart"
